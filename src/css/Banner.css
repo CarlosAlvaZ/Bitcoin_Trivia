@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+.background {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--main-color);
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.background::after {
+    position : absolute;
+    content : '';
+    width: 400px;
+    height: 800px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,7db9e8+100&1+0,0+100 */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+    opacity: 0.1;
+    left : 0;
+    bottom : 0;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+
+.background::before {
+    position : absolute;
+    content : '';
+    width: 400px;
+    height: 800px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,7db9e8+100&1+0,0+100 */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+    opacity: 0.1;
+    right : 0;
+    top : 0;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    animation-name: iddling;
+    animation-duration: 1s;
+    transition: all 1s;
+}
+
+.logo-banner > img{
+    width: 100px;
+    height: 100px;
+}
+
+.logo-banner {
+    border-radius: 100%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin: 0 0 30px 0;
+    position: relative;
+}
+
+.logo-banner-shadow {
+    width: 100px;
+    height: 30px;
+    background-color: black;
+    border-radius: 100%;
+    opacity: 0.5;
+}
+
+.title {
+    color : white;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 100px;
+    font-weight: bold;
+    margin: -60px auto -10px auto;
+    text-shadow: 0 0 50px var(--main-color);
+}
+
+.bitcoin {
+    color: var(--bitcoin-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
+    font-weight: 1000;
+}
+
+.description {
+    font-family: 'Courier New', Courier, monospace;
+    color: whitesmoke;
+    text-shadow: 0 0 50px black;
+    margin: 20px;
+}
+
+.start {
+    padding: 20px 200px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#340068+0,441e69+50,340068+100 */
+    background: rgb(52,0,104); /* Old browsers */
+    background: -moz-linear-gradient(left,  rgba(52,0,104,1) 0%, rgba(68,30,105,1) 50%, rgba(52,0,104,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(52,0,104,1) 0%,rgba(68,30,105,1) 50%,rgba(52,0,104,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(52,0,104,1) 0%,rgba(68,30,105,1) 50%,rgba(52,0,104,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#340068', endColorstr='#340068',GradientType=1 ); /* IE6-9 */
+    outline: none;
+    border: none;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    color : white;
+    font-size: 20px;
+    transition: all ease-in 20ms;
+}
+
+.start:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .background::before, .background::after {
+      animation: iddling infinite 20s linear;
+      animation-direction: alternate-reverse;
+    }
+    .logo-banner {
+        animation : bouncing infinite 2s linear;
+        animation-direction: alternate-reverse;
+        animation-delay: 100ms;
+    }
+    .logo-banner-shadow {
+        animation: shrink infinite 2s linear;
+        animation-direction: alternate-reverse;
+        animation-delay: 100ms;
+    }
+}
+
+
+@keyframes iddling {
+    from {
+        transform: scale(1);
+        bottom : 0
+    }
+    to {
+        transform: scale(1.3);
+        bottom: 100;
+    }
+}
+
+@keyframes bouncing {
+    from { 
+        transform: translateY(0px);
+    } to {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes shrink {
+    from {
+        transform: scale(0.9);
+    } to {
+        transform: scale(0.6);
+    }
+}

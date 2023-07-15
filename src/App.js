@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, {useState, useContext, createContext} from 'react';
 import './App.css';
+import { Routes, Route } from 'react-router-dom'
+// Pages
+import Banner from './pages/Banner';
+import GameView from './pages/GameView'
+import LnurlView from './pages/LnurlView'
+import Staging from './pages/Staging';
+
+export const UserContext = createContext()
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [userName1, setUserName1] = useState('Player1')
+  const [userName2, setUserName2] = useState('Player2')
+  const [questions, setQuestions] = useState({})
+  const [u1points, setU1Points] = useState(0)
+  const [u2points, setU2Points] = useState(0)
+
+  const state = {
+    user1 : userName1,
+    user2 : userName2,
+    questions : questions,
+    u1points : u1points,
+    u2points : u2points,
+    setUserName1 : value => setUserName1(value),
+    setUserName2 : value => setUserName2(value),
+    setQuestions : value => setQuestions(value),
+    setU1Points : value => setU1Points(value),
+    setU2Points : value => setU2Points(value)
+  }
+
+  return <UserContext.Provider value={state}>
+    <Routes>
+      <Route path='/' element={<Banner />}/> 
+      <Route path='/staging' element={<Staging />}/>
+      <Route path='/game' element={<GameView />}/>
+      <Route path='/pay' element={<LnurlView />} />
+    </Routes>
+  </UserContext.Provider>
 }
 
 export default App;
