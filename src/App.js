@@ -1,4 +1,4 @@
-import React, {useState, useContext, createContext} from 'react';
+import React, {useState, createContext, useEffect} from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
 // Pages
@@ -12,9 +12,17 @@ export const UserContext = createContext()
 function App() {
   const [userName1, setUserName1] = useState('Player1')
   const [userName2, setUserName2] = useState('Player2')
-  const [questions, setQuestions] = useState({})
+  const [questions, setQuestions] = useState([{question : "", answers : [], correctAnswer : "", dificultyLevel : 0, subject : "", id : ""}])
   const [u1points, setU1Points] = useState(0)
   const [u2points, setU2Points] = useState(0)
+
+  useEffect(() => {
+    setUserName1('Player1')
+    setUserName1('Player2')
+    setQuestions([{question : "", answers : [], correctAnswer : "", dificultyLevel : 0, subject : "", id : ""}])
+    setU1Points(0)
+    setU2Points(0)
+  }, [])
 
   const state = {
     user1 : userName1,

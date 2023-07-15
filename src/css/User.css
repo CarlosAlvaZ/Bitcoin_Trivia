@@ -1,0 +1,77 @@
+.user1 , .user2 {
+    width: 100%;
+    display: flex;
+    padding: 20px 90px;
+    margin: auto;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.user1 {
+    flex-direction: row;
+}
+
+.user2 {
+    flex-direction: row-reverse;
+}
+
+.user2 .data{
+    flex-direction: row-reverse;
+}
+
+.user2 .points {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.1+0,1+100 */
+    background: -moz-linear-gradient(left,  rgba(255,255,255,0.1) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+.icon > img{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin : auto 20px;
+}
+
+.userName {
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+}
+
+.points {
+    height: 30px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0.1+100 */
+    background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#1affffff',GradientType=1 ); /* IE6-9 */
+}
+
+.counter {
+    position: absolute;
+    left: 49%;
+    right: 49%;
+    top: 6%;
+}
+
+.counter p {
+    font-size: 50px;
+    color: white;
+    text-shadow: 0 0 30px black;
+    font-weight: 800;
+}
+
+.pointsText {
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}

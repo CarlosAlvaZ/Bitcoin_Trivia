@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Counter from '../components/Counter'
+import QuestionLayout from '../components/QuestionLayout'
 
 export default function GameView() {
   const [counter, setCounter] = useState(3)
@@ -10,6 +11,7 @@ export default function GameView() {
   }, [counter])
 
   return (
-    <Counter number={counter}/>
+      counter == 0 ? <QuestionLayout /> :
+      <Counter number={counter}/>
   )
 }

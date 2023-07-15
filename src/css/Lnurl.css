@@ -1,15 +1,16 @@
-.questionLayout {
+.background {
     width: 100%;
     height: 100vh;
     background-color: var(--main-color);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 10% 90%;
+    display: flex;
     position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
-.questionLayout::after {
+.background::after {
     position : absolute;
     content : '';
     width: 400px;
@@ -26,7 +27,7 @@
     border-bottom-right-radius: 100%;
 }
 
-.questionLayout::before {
+.background::before {
     position : absolute;
     content : '';
     width: 400px;
@@ -46,35 +47,23 @@
     transition: all 1s;
 }
 
-.usuario {
-    display: flex;
-    width: 100%;
-}
-
-.overlayMessage {
-    position: absolute;
-    left: 0;
-    top : 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 100px;
-    font-weight: 800;
-    transition: all ease-in;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-}
-
 @media (prefers-reduced-motion: no-preference) {
-    .questionLayout::before, .questionLayout::after {
+    .background::before, .background::after {
       animation: iddling infinite 20s linear;
-      animation-delay: 2s;
       animation-direction: alternate-reverse;
     }
+    .logo-banner {
+        animation : bouncing infinite 2s linear;
+        animation-direction: alternate-reverse;
+        animation-delay: 100ms;
+    }
+    .logo-banner-shadow {
+        animation: shrink infinite 2s linear;
+        animation-direction: alternate-reverse;
+        animation-delay: 100ms;
+    }
 }
+
 
 @keyframes iddling {
     from {
@@ -84,5 +73,21 @@
     to {
         transform: scale(1.3);
         bottom: 100;
+    }
+}
+
+@keyframes bouncing {
+    from { 
+        transform: translateY(0px);
+    } to {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes shrink {
+    from {
+        transform: scale(0.9);
+    } to {
+        transform: scale(0.6);
     }
 }
